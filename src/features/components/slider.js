@@ -1,32 +1,27 @@
+import Component from '../../base/Component';
 import _ from 'underscore';
 import $ from 'jquery';
 
-export default class Slider {
+export default class Slider extends Component {
   constructor(id, options) {
-    this.id = id;
+    super(id);
+
     this.options = _.extend({
       mode: 'absolute',
       hslider: false
     }, options);
 
-    this.slider = $('<canvas>', {
+    this.component = $('<canvas>', {
       id: id,
       nx: 'slider'
     });
   }
 
-  init($el) {
-    this.nx = window.nx.widgets[this.id];
+  init() {
+    super.init();
+    // configure
     this.nx.mode = this.options.mode;
     this.nx.hslider = this.options.hslider;
-  }
-
-  display($el) {
-    $($el).append(this.slider);
-  }
-
-  update() {
-    this.nx.draw();
   }
 
   set value(val) {
