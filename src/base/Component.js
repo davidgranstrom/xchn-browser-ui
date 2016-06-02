@@ -10,7 +10,7 @@ export default class Component {
   init() {
     this.nx = window.nx.widgets[this.id];
     // forward data to the dispatcher
-    this.nx.on('*', OSCDispatcher);
+    this.nx.sendsTo(OSCDispatcher.bind(this.nx));
   }
 
   display($el) {
