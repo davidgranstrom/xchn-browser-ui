@@ -1,7 +1,10 @@
-var $ = require('jquery');
+import $ from 'jquery';
 var nx = window.nx;
 
 nx.onload = () => {
-  console.log('load nexus');
+  console.log('loaded nexusui');
+  // setup nexusui callbacks here
 };
 
+var $multislider = $('<canvas>').attr('nx', 'multislider');
+$('#container').append($multislider);
