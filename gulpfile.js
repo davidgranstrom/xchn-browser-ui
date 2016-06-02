@@ -1,6 +1,8 @@
 var gulp = require('gulp');
 var connect = require('gulp-connect');
 var sourcemaps = require('gulp-sourcemaps');
+var uglify = require('gulp-uglify');
+var rename = require('gulp-rename');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var browserify = require('browserify');
@@ -9,6 +11,7 @@ var babel = require('babelify');
 
 var babelPresets = {
   // Use all of the ES2015 spec
+  // Use React bindings
   presets: [ 'es2015' ]
 };
 
@@ -19,11 +22,13 @@ function compile(watch) {
   function rebundle() {
     bundler.bundle()
       .on('error', function(err) { console.error(err); this.emit('end'); })
-      .pipe(source('build.js'))
+      .pipe(source('app.js'))
       .pipe(buffer())
+      // .pipe(uglify())
       .pipe(sourcemaps.init({ loadMaps: true }))
       .pipe(sourcemaps.write('./'))
-      .pipe(gulp.dest('./build'));
+      // .pipe(rename('app.min.js'))
+      .pipe(gulp.dest('./public/dist'));
   }
 
   if (watch) {
