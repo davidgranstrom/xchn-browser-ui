@@ -14,9 +14,16 @@
     "browserify": "^13.0.1",
     "gulp": "^3.9.1",
     "gulp-connect": "^4.0.0",
+    "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.3",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0"
+  },
+  "dependencies": {
+    "jquery": "^2.2.4",
+    "nexusui": "^1.0.8",
+    "pills": "^0.4.6"
   }
 }
