@@ -1,6 +1,6 @@
 import _ from 'underscore';
 import $ from 'jquery';
-import { OSCDispatcher } from './Dispatcher';
+import dispatcher from './Dispatcher';
 
 export default class Component {
   constructor(id) {
@@ -10,7 +10,7 @@ export default class Component {
   init() {
     this.nx = window.nx.widgets[this.id];
     // forward data to the dispatcher
-    this.nx.sendsTo(OSCDispatcher.bind(this.nx));
+    this.nx.sendsTo(dispatcher.send);
   }
 
   display($el) {
