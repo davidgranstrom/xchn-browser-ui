@@ -25,6 +25,7 @@
   "dependencies": {
     "jquery": "^2.2.4",
     "nexusui": "^1.0.8",
+    "osc": "^2.1.0",
     "pills": "^0.4.6"
   }
 }
