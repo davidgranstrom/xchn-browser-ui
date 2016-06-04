@@ -9,13 +9,13 @@ nx.globalWidgets = false; // don't create global variables
 // nx.colorize();
 
 var slider = new Slider('test');
-slider.display('#container'); // we need to call display for nexusui to work properly..
+slider.display('#slider'); // we need to call display for nexusui to work properly..
 
 var xy = new XYPad('xy-test', { animate: 'bounce' });
-xy.display('#container');
+xy.display('#xy');
 
 var knob = new Knob('knob-test');
-knob.display('#container');
+knob.display('#knob');
 
 nx.onload = () => {
   console.log('loaded nexusui');
