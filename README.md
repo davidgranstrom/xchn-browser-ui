@@ -8,7 +8,7 @@ Currently a proof-of-concept.
 ## What's been done so far?
 
 * Build process (bundling, transpiling ES6)
-**** ES6 wrappers around NexusUI components
+* ES6 wrappers around NexusUI components
 * Sending OSC
 
 ## TODO
